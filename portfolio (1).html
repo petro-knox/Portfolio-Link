@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<!--
+  This file expects Petro_Knox_CV.pdf to sit in the same folder as this HTML file
+  (that's what the "Download CV" links point to) — keep them together when you publish.
+  The Fruugo / Placed / Debonairs Pizza / Urban Angel diagrams are original abstract SVGs,
+  not real screenshots. Swap in real (anonymised, permission-cleared) screenshots by
+  replacing the <svg class="diagram">...</svg> blocks with <img> tags if you're able to.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Petro Knox — Product & Customer Experience Leader</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F7F5F0;
+    --paper-2:#FFFFFF;
+    --ink:#18150F;
+    --ink-soft:#5C5748;
+    --ink-faint:#8A8474;
+    --accent:#0B6E4F;
+    --accent-soft:#E4EFE8;
+    --line:#E2DDD0;
+    --sidebar-w:260px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Roboto', sans-serif;
+    font-size:16px;
+    line-height:1.65;
+  }
+  h1,h2,h3{
+    font-family:'Roboto', sans-serif;
+    font-weight:700;
+    line-height:1.15;
+    margin:0 0 .4em 0;
+    letter-spacing:-0.01em;
+  }
+  p{margin:0 0 1em 0;}
+  a{color:var(--ink); text-decoration-color:var(--line); text-underline-offset:3px;}
+  a:hover{color:var(--accent); text-decoration-color:var(--accent);}
+  .mono{font-family:'Roboto Mono', monospace;}
+
+  /* ---------- Layout shell ---------- */
+  .shell{
+    display:flex;
+    max-width:1280px;
+    margin:0 auto;
+  }
+  nav.rail{
+    width:var(--sidebar-w);
+    flex-shrink:0;
+    position:sticky;
+    top:0;
+    align-self:flex-start;
+    height:100vh;
+    padding:2.5rem 1.75rem;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    border-right:1px solid var(--line);
+  }
+  .rail-top .name{
+    font-family:'Roboto', sans-serif;
+    font-size:1.15rem;
+    font-weight:600;
+    margin-bottom:.15rem;
+  }
+  .rail-top .role{
+    color:var(--ink-soft);
+    font-size:.85rem;
+    margin-bottom:2rem;
+  }
+  .rail-nav{list-style:none; margin:0; padding:0;}
+  .rail-nav li{margin-bottom:.65rem;}
+  .rail-nav a{
+    display:flex;
+    gap:.65rem;
+    align-items:baseline;
+    font-size:.85rem;
+    color:var(--ink-soft);
+    text-decoration:none;
+  }
+  .rail-nav a .n{
+    font-family:'Roboto Mono', monospace;
+    font-size:.72rem;
+    color:var(--ink-faint);
+    width:1.3rem;
+  }
+  .rail-nav a:hover, .rail-nav a.active{color:var(--ink);}
+  .rail-nav a.active .n{color:var(--accent);}
+  .rail-bottom{font-size:.78rem; color:var(--ink-faint);}
+  .rail-bottom a{color:var(--ink-soft);}
+
+  main{
+    flex:1;
+    min-width:0;
+    padding:0 3.5rem 6rem 3.5rem;
+  }
+  section{
+    padding-top:5.5rem;
+    max-width:680px;
+  }
+  section.wide{max-width:none;}
+  section#top{padding-top:4.5rem;}
+
+  /* ---------- Hero ---------- */
+  .tagline{
+    font-size:clamp(1.9rem, 3.4vw, 2.6rem);
+    max-width:15ch;
+  }
+  .subhead{
+    color:var(--ink-soft);
+    font-size:1.05rem;
+    max-width:52ch;
+    margin-top:1.1rem;
+  }
+  .pills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:.5rem;
+    margin:1.6rem 0 1.8rem 0;
+  }
+  .pill{
+    border:1px solid var(--line);
+    padding:.35rem .8rem;
+    font-size:.82rem;
+    font-family:'Roboto Mono', monospace;
+    color:var(--ink-soft);
+  }
+  .hero-links{display:flex; gap:1.4rem; font-size:.92rem;}
+  .hero-links a{color:var(--ink); font-weight:500;}
+
+  /* ---------- Impact strip ---------- */
+  .impact-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    border-top:1px solid var(--line);
+    border-left:1px solid var(--line);
+    max-width:960px;
+  }
+  .impact-cell{
+    border-right:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    padding:1.6rem 1.4rem;
+  }
+  .impact-cell .num{
+    font-family:'Roboto', sans-serif;
+    font-size:2.1rem;
+    display:block;
+    color:var(--accent);
+  }
+  .impact-cell .label{
+    font-size:.85rem;
+    color:var(--ink-soft);
+    margin-top:.25rem;
+  }
+
+  /* ---------- Case studies ---------- */
+  .case-head{margin-bottom:.3rem;}
+  .case-sub{color:var(--ink-soft); font-size:1.05rem; max-width:48ch; margin-bottom:1.8rem;}
+  .spec-list{
+    display:flex;
+    flex-wrap:wrap;
+    gap:.5rem 1.6rem;
+    padding:1rem 0 1.4rem 0;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    margin-bottom:2.2rem;
+    font-family:'Roboto Mono', monospace;
+    font-size:.82rem;
+    color:var(--ink-soft);
+  }
+  .spec-list span{white-space:nowrap;}
+  .spec-list b{color:var(--ink); font-weight:500;}
+
+  .stage{margin-bottom:2.1rem;}
+  .stage h3{font-size:1.02rem; font-family:'Roboto', sans-serif; font-weight:600; margin-bottom:.5rem;}
+  .stage ul{margin:.5rem 0 0 0; padding-left:1.1rem;}
+  .stage li{margin-bottom:.35rem; color:var(--ink-soft);}
+  .stage p{color:var(--ink-soft);}
+
+  .pullquote{
+    border-left:3px solid var(--accent);
+    padding:.2rem 0 .2rem 1.4rem;
+    margin:2rem 0;
+    font-family:'Roboto', sans-serif;
+    font-size:1.25rem;
+    font-style:italic;
+    color:var(--ink);
+  }
+
+  .diagram-wrap{margin:2rem 0 2.4rem 0;}
+  .diagram{width:100%; height:auto; display:block;}
+  .diagram-caption{
+    font-size:.78rem;
+    color:var(--ink-faint);
+    font-family:'Roboto Mono', monospace;
+    margin-top:.6rem;
+  }
+
+  .outcome-box{
+    background:var(--accent-soft);
+    padding:1.4rem 1.6rem;
+    margin-top:.5rem;
+  }
+  .outcome-box p{margin:0; color:var(--ink);}
+
+  /* stat highlight inline for Debonairs */
+  .stat-inline{
+    display:inline-flex;
+    align-items:baseline;
+    gap:.4rem;
+    font-family:'Roboto', sans-serif;
+    font-size:2.4rem;
+    color:var(--accent);
+  }
+  .stat-inline .unit{font-family:'Roboto', sans-serif; font-size:1rem; color:var(--ink-soft);}
+
+  /* ---------- Career ---------- */
+  .career-list{max-width:840px; border-top:1px solid var(--line);}
+  .career-row{
+    display:grid;
+    grid-template-columns:170px 1fr;
+    gap:1.5rem;
+    padding:1.1rem 0;
+    border-bottom:1px solid var(--line);
+  }
+  .career-when{font-size:.8rem; color:var(--ink-faint); padding-top:.2rem;}
+  .career-what h3{font-size:1rem; font-weight:500; margin-bottom:.3rem;}
+  .career-what p{font-size:.92rem; color:var(--ink-soft); margin:0;}
+  @media (max-width: 640px){
+    .career-row{grid-template-columns:1fr;}
+    .career-when{padding-top:0;}
+  }
+
+  /* ---------- AI approach ---------- */
+  .flow{
+    display:flex;
+    flex-wrap:wrap;
+    border-top:1px solid var(--line);
+    border-left:1px solid var(--line);
+    margin:1.8rem 0 2rem 0;
+  }
+  .flow-step{
+    flex:1 1 150px;
+    border-right:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    padding:1.2rem 1.1rem;
+  }
+  .flow-step .fn{
+    font-family:'Roboto Mono', monospace;
+    font-size:.78rem;
+    color:var(--accent);
+  }
+  .flow-step h3{font-size:.98rem; font-family:'Roboto', sans-serif; font-weight:600; margin:.35rem 0 .4rem 0;}
+  .flow-step p{font-size:.86rem; color:var(--ink-soft); margin:0;}
+
+  .tools-line{color:var(--ink-soft); font-size:.92rem; margin-top:1.4rem;}
+
+  /* ---------- Toolkit ---------- */
+  .toolkit-group{margin-bottom:1.6rem;}
+  .toolkit-group h3{
+    font-size:.82rem;
+    font-family:'Roboto Mono', monospace;
+    font-weight:400;
+    color:var(--ink-faint);
+    margin-bottom:.7rem;
+  }
+  .chips{display:flex; flex-wrap:wrap; gap:.5rem;}
+  .chip{
+    border:1px solid var(--line);
+    background:var(--paper-2);
+    padding:.4rem .85rem;
+    font-size:.85rem;
+    color:var(--ink);
+  }
+
+  /* ---------- Contact / footer ---------- */
+  #contact{padding-bottom:3rem;}
+  .contact-links{display:flex; flex-wrap:wrap; gap:1.6rem; margin-top:1.2rem; font-size:1rem;}
+  .contact-links a{font-weight:500;}
+  footer{
+    border-top:1px solid var(--line);
+    padding-top:1.4rem;
+    font-size:.8rem;
+    color:var(--ink-faint);
+  }
+
+  /* ---------- Mobile ---------- */
+  .mobile-nav{display:none;}
+  @media (max-width: 880px){
+    nav.rail{display:none;}
+    .mobile-nav{
+      display:flex;
+      overflow-x:auto;
+      gap:1.2rem;
+      padding:1rem 1.2rem;
+      border-bottom:1px solid var(--line);
+      position:sticky;
+      top:0;
+      background:var(--paper);
+      z-index:10;
+    }
+    .mobile-nav a{
+      font-family:'Roboto Mono', monospace;
+      font-size:.8rem;
+      white-space:nowrap;
+      color:var(--ink-soft);
+      text-decoration:none;
+    }
+    main{padding:0 1.4rem 4rem 1.4rem;}
+    section{padding-top:3.2rem;}
+    .impact-grid{grid-template-columns:repeat(2,1fr);}
+  }
+</style>
+</head>
+<body>
+
+<div class="mobile-nav">
+  <a href="#top">Intro</a>
+  <a href="#impact">Impact</a>
+  <a href="#fruugo">Fruugo</a>
+  <a href="#placed">Placed</a>
+  <a href="#debonairs">Debonairs Pizza</a>
+  <a href="#urban-angel">Urban Angel</a>
+  <a href="#career">Career</a>
+  <a href="#ai-approach">AI approach</a>
+  <a href="#toolkit">Toolkit</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<div class="shell">
+  <nav class="rail">
+    <div class="rail-top">
+      <div class="name">Petro Knox</div>
+      <div class="role">Product & CX Leader</div>
+      <ul class="rail-nav" id="railNav">
+        <li><a href="#top"><span class="n mono">00</span>Intro</a></li>
+        <li><a href="#impact"><span class="n mono">01</span>Impact</a></li>
+        <li><a href="#fruugo"><span class="n mono">02</span>Fruugo</a></li>
+        <li><a href="#placed"><span class="n mono">03</span>Placed</a></li>
+        <li><a href="#debonairs"><span class="n mono">04</span>Debonairs Pizza</a></li>
+        <li><a href="#urban-angel"><span class="n mono">05</span>Urban Angel</a></li>
+        <li><a href="#career"><span class="n mono">06</span>Career</a></li>
+        <li><a href="#ai-approach"><span class="n mono">07</span>AI approach</a></li>
+        <li><a href="#toolkit"><span class="n mono">08</span>Toolkit</a></li>
+        <li><a href="#contact"><span class="n mono">09</span>Contact</a></li>
+      </ul>
+    </div>
+    <div class="rail-bottom">
+      <a href="https://www.linkedin.com/in/petro-knox/" target="_blank" rel="noopener">LinkedIn</a> &nbsp;·&nbsp; <a href="Petro_Knox_CV.pdf" target="_blank" rel="noopener">CV</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- 00 INTRO -->
+    <section id="top">
+      <h1 class="tagline">I turn complex commercial problems into products people can use</h1>
+      <p class="subhead">Product leader working across eCommerce, marketplaces, SaaS and operations — taking a messy customer or business problem, shaping it into a product, and working with engineering to ship it.</p>
+      <div class="pills">
+        <span class="pill">Product leadership</span>
+        <span class="pill">eCommerce</span>
+        <span class="pill">Marketplaces</span>
+        <span class="pill">SaaS</span>
+        <span class="pill">Operations</span>
+      </div>
+      <p class="subhead">Over 20 years I've worked both ends of that problem: running the operational floor in hospitality and retail, then building the marketplace, checkout and B2B tooling that scale commerce businesses. The pattern is always the same — find the real problem, decide what to build, work closely with the engineers who'll build it, and stay with it through delivery.</p>
+      <div class="hero-links">
+        <a href="https://www.linkedin.com/in/petro-knox/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="Petro_Knox_CV.pdf" target="_blank" rel="noopener">Download CV ↗</a>
+      </div>
+    </section>
+
+    <!-- 01 IMPACT -->
+    <section id="impact" class="wide">
+      <h2>Selected impact</h2>
+      <div class="impact-grid">
+        <div class="impact-cell"><span class="num">20+</span><span class="label">years across operations & digital product</span></div>
+        <div class="impact-cell"><span class="num">10M+</span><span class="label">SKUs — marketplace catalogue scale</span></div>
+        <div class="impact-cell"><span class="num">24</span><span class="label">languages across 42 countries on one platform</span></div>
+        <div class="impact-cell"><span class="num">2</span><span class="label">engineering teams led concurrently</span></div>
+        <div class="impact-cell"><span class="num">25%</span><span class="label">YoY growth from a new digital ordering channel</span></div>
+        <div class="impact-cell"><span class="num">0→1</span><span class="label">B2B dashboard, prototype through to delivery</span></div>
+      </div>
+    </section>
+
+    <!-- 02 FRUUGO -->
+    <section id="fruugo">
+      <h2 class="case-head">Fruugo</h2>
+      <p class="case-sub">Marketplace and checkout for a catalogue of 10M+ products, sold in 24 languages.</p>
+
+      <div class="spec-list">
+        <span><b>Scope</b> Marketplace + Checkout</span>
+        <span><b>Catalogue</b> 10M+ SKUs</span>
+        <span><b>Markets</b> 42 countries, 24 languages</span>
+        <span><b>Teams</b> 2 engineering teams</span>
+        <span><b>Payments</b> Adyen, Braintree, Checkout.com, Apple Pay, Google Pay</span>
+      </div>
+
+      <div class="stage">
+        <h3>The problem</h3>
+        <p>Fruugo brings independent retailers into a single international storefront. As the catalogue grew past 10 million SKUs across 24 languages, the parts of the experience customers actually feel most — search, the buying journey, and checkout — were carrying more weight than they were designed for. Two engineering teams owned adjacent pieces of that journey, which meant the roadmap needed a single owner who could see both sides.</p>
+      </div>
+
+      <div class="stage">
+        <h3>The decisions</h3>
+        <ul>
+          <li>Took ownership of the marketplace and checkout roadmap across both engineering teams, so priorities were set once, against one view of the customer journey, rather than negotiated team by team.</li>
+          <li>Prioritised checkout resilience and payment coverage first — extending the payment stack across Adyen, Braintree, Apple Pay and Google Pay so more customers, in more markets, could complete a purchase in the way they expected to pay.</li>
+          <li>Treated search as part of the checkout problem, not a separate feature — a customer who can't find the right product in the right language never reaches checkout at all.</li>
+        </ul>
+      </div>
+
+      <div class="stage">
+        <h3>The delivery</h3>
+        <p>Worked day to day with both engineering teams to plan, sequence and ship improvements to search, the customer journey and the marketplace experience, keeping the roadmap grounded in what customers were actually getting stuck on rather than what was easiest to build next.</p>
+      </div>
+
+      <div class="diagram-wrap">
+        <svg class="diagram" viewBox="0 0 640 220" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" y="0" width="640" height="220" fill="#FFFFFF"/>
+          <g font-family="Roboto Mono, monospace" font-size="11" fill="#5C5748">
+            <rect x="10" y="80" width="110" height="60" fill="none" stroke="#E2DDD0"/>
+            <text x="65" y="105" text-anchor="middle" fill="#18150F" font-size="12">Retailers</text>
+            <text x="65" y="122" text-anchor="middle">10M+ SKUs</text>
+
+            <rect x="160" y="80" width="110" height="60" fill="none" stroke="#E2DDD0"/>
+            <text x="215" y="105" text-anchor="middle" fill="#18150F" font-size="12">Catalogue</text>
+            <text x="215" y="122" text-anchor="middle">24 languages</text>
+
+            <rect x="310" y="80" width="110" height="60" fill="none" stroke="#E2DDD0"/>
+            <text x="365" y="105" text-anchor="middle" fill="#18150F" font-size="12">Search</text>
+            <text x="365" y="122" text-anchor="middle">&amp; journey</text>
+
+            <rect x="460" y="22" width="150" height="72" fill="#E4EFE8" stroke="#0B6E4F"/>
+            <text x="535" y="44" text-anchor="middle" fill="#18150F" font-size="12">Checkout</text>
+            <text x="535" y="60" text-anchor="middle" font-size="9">Adyen · Braintree</text>
+            <text x="535" y="74" text-anchor="middle" font-size="9">Checkout.com</text>
+
+            <rect x="460" y="130" width="150" height="60" fill="#E4EFE8" stroke="#0B6E4F"/>
+            <text x="535" y="155" text-anchor="middle" fill="#18150F" font-size="12">Wallets</text>
+            <text x="535" y="172" text-anchor="middle" font-size="10">Apple Pay · Google Pay</text>
+
+            <line x1="120" y1="110" x2="160" y2="110" stroke="#8A8474"/>
+            <line x1="270" y1="110" x2="310" y2="110" stroke="#8A8474"/>
+            <line x1="420" y1="105" x2="460" y2="70" stroke="#8A8474"/>
+            <line x1="420" y1="115" x2="460" y2="150" stroke="#8A8474"/>
+          </g>
+        </svg>
+        <div class="diagram-caption">Simplified view of the marketplace-to-checkout path this roadmap covered.</div>
+      </div>
+
+      <div class="outcome-box">
+        <p>The outcome: conversion rates improved from a 5% baseline and checkout abandonment fell by 4%, on top of a checkout that handled more payment methods and more failure modes, a search and journey experience that kept pace with a fast-growing catalogue, and one roadmap owned across two teams instead of two roadmaps negotiated between them.</p>
+      </div>
+    </section>
+
+    <!-- 03 PLACED -->
+    <section id="placed">
+      <h2 class="case-head">Placed</h2>
+      <p class="case-sub">A B2B client dashboard, taken from a working prototype to a shipped product.</p>
+
+      <div class="stage">
+        <h3>The problem</h3>
+        <p>Placed's clients had no self-serve way to see or manage their own account — every basic question meant going through an account manager. That's slow for the client and expensive to run at scale.</p>
+      </div>
+
+      <div class="stage">
+        <h3>The role</h3>
+        <p>Product manager for the dashboard end to end: research, prototyping, UX and UI decisions, and working with engineering through to delivery — including account and access management and the core dashboard functionality clients would use daily.</p>
+      </div>
+
+      <div class="pullquote">I built the prototype while the product was being developed.</div>
+
+      <div class="stage">
+        <h3>Prototype into product</h3>
+        <p>Rather than writing a static spec and waiting, the dashboard was prototyped directly — using AI-assisted research and prototyping tools alongside Figma — so clients could react to something real early on, and engineering could build against a prototype that was already validated rather than a document.</p>
+      </div>
+
+      <div class="diagram-wrap">
+        <svg class="diagram" viewBox="0 0 640 200" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" y="0" width="640" height="200" fill="#FFFFFF"/>
+          <g font-family="Roboto Mono, monospace" font-size="11" fill="#5C5748">
+            <rect x="10" y="20" width="180" height="50" fill="none" stroke="#E2DDD0"/>
+            <text x="100" y="42" text-anchor="middle" fill="#18150F" font-size="12">Client research</text>
+            <text x="100" y="58" text-anchor="middle" font-size="10">what clients get stuck on</text>
+
+            <rect x="10" y="90" width="180" height="50" fill="#E4EFE8" stroke="#0B6E4F"/>
+            <text x="100" y="112" text-anchor="middle" fill="#18150F" font-size="12">AI-assisted prototype</text>
+            <text x="100" y="128" text-anchor="middle" font-size="10">Figma + AI tools</text>
+
+            <rect x="230" y="55" width="180" height="50" fill="none" stroke="#E2DDD0"/>
+            <text x="320" y="77" text-anchor="middle" fill="#18150F" font-size="12">Client feedback</text>
+            <text x="320" y="93" text-anchor="middle" font-size="10">reacting to something real</text>
+
+            <rect x="450" y="55" width="180" height="50" fill="#E4EFE8" stroke="#0B6E4F"/>
+            <text x="540" y="77" text-anchor="middle" fill="#18150F" font-size="12">Shipped dashboard</text>
+            <text x="540" y="93" text-anchor="middle" font-size="10">access &amp; account management</text>
+
+            <line x1="190" y1="45" x2="230" y2="70" stroke="#8A8474"/>
+            <line x1="190" y1="115" x2="230" y2="90" stroke="#8A8474"/>
+            <line x1="410" y1="80" x2="450" y2="80" stroke="#8A8474"/>
+          </g>
+        </svg>
+        <div class="diagram-caption">Research and prototype ran in parallel with build, feeding client feedback straight into engineering.</div>
+      </div>
+
+      <div class="outcome-box">
+        <p>The outcome: clients get a self-serve view of their own account instead of routing every question through an account manager, and the build itself was shaped by real client reactions to a working prototype rather than a spec written up front.</p>
+      </div>
+    </section>
+
+    <!-- 04 DEBONAIRS -->
+    <section id="debonairs">
+      <h2 class="case-head">Debonairs Pizza</h2>
+      <p class="case-sub">A digital ordering solution built to solve a commercial problem, not a technical one.</p>
+      <div class="stage">
+        <p>Debonairs Pizza needed a better way for customers to order — the existing channel was losing orders to friction, not to competitors. The response was a digital ordering solution built around how customers actually wanted to order, not around the constraints of the existing system.</p>
+      </div>
+      <div class="stat-inline">25% <span class="unit">year-on-year growth in digital ordering</span></div>
+    </section>
+
+    <!-- 05 URBAN ANGEL -->
+    <section id="urban-angel">
+      <h2 class="case-head">Urban Angel Café</h2>
+      <p>Hands-on operational experience running a café — the customer queue, the till, the stock, the staffing. It's a small case study on paper, but it's the reason the hospitality-tech thinking elsewhere on this page isn't theoretical: the operational side of hospitality and food service is something I've actually run, not just designed for.</p>
+    </section>
+
+    <!-- 06 CAREER -->
+    <section id="career" class="wide">
+      <h2>Career</h2>
+      <p style="max-width:640px; color:var(--ink-soft); margin-bottom:1.8rem;">The roles above are the deeper case studies. This is the fuller picture — 20+ years moving between product, customer experience and hands-on operations.</p>
+      <div class="career-list">
+        <div class="career-row">
+          <div class="career-when mono">Mar 2026 – Present</div>
+          <div class="career-what"><h3>Product Delivery Lead — Placed Recruitment Ltd</h3><p>Leading end-to-end delivery of the recruitment platform redesign — discovery, UX/UI, prototyping and technical implementation, using AI-assisted tools to move from idea to shipped feature fast.</p></div>
+        </div>
+        <div class="career-row">
+          <div class="career-when mono">Jun 2023 – Jul 2025</div>
+          <div class="career-what"><h3>CX Product Owner — Fruugo.com Ltd</h3><p>Owned marketplace and checkout across two teams, 42 countries and 24 languages. See the case study above.</p></div>
+        </div>
+        <div class="career-row">
+          <div class="career-when mono">Jul 2022 – May 2023</div>
+          <div class="career-what"><h3>Product Owner — Jacobs & Turner Ltd (Trespass)</h3><p>Directed technical delivery across B2C and DTOC eCommerce projects; introduced Elastic Suite search that cut bounce rate, and third-party logistics integrations that cut WISMO support contacts by 75% in four weeks.</p></div>
+        </div>
+        <div class="career-row">
+          <div class="career-when mono">Mar 2021 – Jun 2022</div>
+          <div class="career-what"><h3>Founder — Furry Kids Kitchen</h3><p>Ran the full product lifecycle for a pet food and treats range — NPD, market research, recipe development and the eCommerce build. Award-winner at the 2021 Scottish Agricultural Show.</p></div>
+        </div>
+        <div class="career-row">
+          <div class="career-when mono">May 2014 – May 2019</div>
+          <div class="career-what"><h3>Founder & Director — Urban Angel Café</h3><p>Scaled a top-rated café to a 4.7-star, Gold TripAdvisor rating. See above.</p></div>
+        </div>
+        <div class="career-row">
+          <div class="career-when mono">Jan 2013 – Apr 2014</div>
+          <div class="career-what"><h3>Hospitality Sales Manager — BankServAfrica</h3><p>Sales strategy and key account management for the hospitality sector, working cross-functionally to integrate payment solutions.</p></div>
+        </div>
+        <div class="career-row">
+          <div class="career-when mono">Apr 2010 – Dec 2012</div>
+          <div class="career-what"><h3>QSR Product Manager — Famous Brands Ltd (Debonairs Pizza)</h3><p>First-to-market digital ordering across e-commerce, mobile and self-service terminals. See the Debonairs Pizza case study above.</p></div>
+        </div>
+        <div class="career-row">
+          <div class="career-when mono">Aug 2005 – Mar 2010</div>
+          <div class="career-what"><h3>Operations & Project Manager — Fournos Bakery</h3><p>Operational oversight and business development across a group that grew from 5 to 10 stores on-time and in-budget.</p></div>
+        </div>
+      </div>
+      <p style="color:var(--ink-faint); font-size:.85rem; margin-top:1rem;">Plus earlier roles in restaurant and function management, 2001–2005. Full detail on request or in the CV below.</p>
+    </section>
+
+    <!-- 07 AI APPROACH -->
+    <section id="ai-approach" class="wide">
+      <h2>How I use AI as a product manager</h2>
+      <p style="max-width:640px; color:var(--ink-soft);">AI shows up at almost every stage of how I work — not as a novelty, but as a way to move faster from a vague problem to something a team can actually build and ship.</p>
+      <div class="flow">
+        <div class="flow-step"><div class="fn mono">01</div><h3>Research</h3><p>Making sense of customer and market signal quickly, before committing to a direction.</p></div>
+        <div class="flow-step"><div class="fn mono">02</div><h3>Discovery</h3><p>Turning that research into problems worth solving, tested against real constraints.</p></div>
+        <div class="flow-step"><div class="fn mono">03</div><h3>Requirements</h3><p>Drafting and stress-testing requirements fast, so engineering gets a clear brief.</p></div>
+        <div class="flow-step"><div class="fn mono">04</div><h3>Prototype</h3><p>Building something clickable in Figma clients and stakeholders can react to.</p></div>
+        <div class="flow-step"><div class="fn mono">05</div><h3>Technical exploration</h3><p>Sanity-checking feasibility and approach alongside engineering, early.</p></div>
+        <div class="flow-step"><div class="fn mono">06</div><h3>Delivery</h3><p>Staying close through build, so what ships still matches the original problem.</p></div>
+      </div>
+      <p class="tools-line">Tools I lean on: ChatGPT and Claude for research, requirements and technical exploration; Figma for prototyping. The tools matter less than what they let me do — get from a rough problem to a working prototype in days, not weeks, at Placed and elsewhere.</p>
+    </section>
+
+    <!-- 08 TOOLKIT -->
+    <section id="toolkit" class="wide">
+      <h2>Product toolkit</h2>
+      <div class="toolkit-group">
+        <h3>Strategy & discovery</h3>
+        <div class="chips">
+          <span class="chip">Product strategy</span>
+          <span class="chip">Discovery</span>
+          <span class="chip">Roadmaps</span>
+          <span class="chip">Agile</span>
+        </div>
+      </div>
+      <div class="toolkit-group">
+        <h3>Domain</h3>
+        <div class="chips">
+          <span class="chip">eCommerce</span>
+          <span class="chip">Marketplace</span>
+          <span class="chip">Payments</span>
+          <span class="chip">B2B SaaS</span>
+        </div>
+      </div>
+      <div class="toolkit-group">
+        <h3>Craft</h3>
+        <div class="chips">
+          <span class="chip">UX</span>
+          <span class="chip">APIs</span>
+          <span class="chip">Analytics</span>
+          <span class="chip">AI-assisted development</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 09 CONTACT -->
+    <section id="contact">
+      <h2>Get in touch</h2>
+      <p style="color:var(--ink-soft); max-width:48ch;">If you've got a complex commercial problem that needs turning into a product, I'd like to hear about it.</p>
+      <div class="contact-links">
+        <a href="mailto:petro.knox@gmail.com">Email ↗</a>
+        <a href="https://www.linkedin.com/in/petro-knox/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="Petro_Knox_CV.pdf" target="_blank" rel="noopener">Download CV ↗</a>
+      </div>
+      <footer style="margin-top:3rem;">Petro Knox — Product & Customer Experience Leader, eCommerce · Marketplaces · SaaS · Operations</footer>
+    </section>
+
+  </main>
+</div>
+
+<script>
+  // Every in-page link (rail nav, mobile nav, hero links) should scroll to that
+  // section on this page — never be treated as a navigation/external link.
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', function(e){
+      const targetId = this.getAttribute('href').slice(1);
+      const target = document.getElementById(targetId);
+      if(target){
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        history.replaceState(null, '', '#' + targetId);
+      }
+    });
+  });
+
+  const sections = document.querySelectorAll('main section[id]');
+  const navLinks = document.querySelectorAll('.rail-nav a');
+  const byId = id => document.querySelector('.rail-nav a[href="#' + id + '"]');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const link = byId(entry.target.id);
+      if(!link) return;
+      if(entry.isIntersecting){
+        navLinks.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+  sections.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>
